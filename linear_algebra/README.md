@@ -12,6 +12,8 @@
   + [Умножение матриц](#matrix_multiplication)
   + [Умножение матриц (частные случаи)](#matrix_multiplication_spetial)
   + [Делители нуля](#matrix_multiplication_null)
+  + [Матрица Грама](#matrix_gram)
+  + [Обратные матрицы](#matrix_inverse)
   + [Практика](#matrix_practice)
   
 ## <a name="vectors"></a> Векторы
@@ -387,6 +389,59 @@ np.dot(matrix_b, matrix_a)
   ![Matrix multiplication on scalar matrix](media/matrix_multiplication_special_scalar.png)
 
 ### <a name="matrix_multiplication_null"></a> Делители нуля
+
+> **Делитель нуля** - это ненулевые элементы, которые при умножении дают ноль.
+
+Элемент *а* может быть:
+* **Левым делителем нуля**, если существует ненулевое *b* такое, что ab = 0
+* **Правым делителем нуля**, если существует ненулевое *b* такое, что ba = 0
+
+**Элемент, который одновременно является и правым, и левым делителем, называется делителем нуля.**
+
+**Если матрицы *a* и *b* делители нуля, то строки левого сомножителя ортогональны столбцам правого**
+
+### <a name="matrix_gram"></a> Матрица Грама
+
+> **Матрица Грама** - матрица, составленная из скалярных произведений системы векторов.
+
+Допустим, у нас есть система векторов *X*.
+
+![X vectors system](media/matrix_gram_x.png)
+
+Тогда, матрица, составленная из скалярных произведений *строк* матрицы *X*, то бишь матрица Грама, будет выглядеть так:
+![Gram matrix of cols](media/matrix_gram_col.png)
+
+Матрица скалярных произведений столбцов примет вид:
+![Gram matrix of rows](media/matrix_gram_row.png)
+
+**Пометки**:
+* *Матрица Грамма всегда представляет собой квадратную и симметричную матрицу.*
+* *Если векторы линейно независимы, то матрица Грама обратимая.*
+
+### <a name="matrix_inverse"></a> Обратные матрицы
+
+Начнем с понятия обратного числа.
+Деление на число в математике можно воспроизвести с помощью умножения на обратное число.
+
+![Inverse num](media/matrix_inverse_nums.png)
+
+> **Обратное число** - это такое число *a^-1*, которое при умножении на *a* даст единицу.
+* Обратное число есть у всех чисел, кроме нуля.
+* Обратное число всегда одно и оно коммутативно.
+
+Что же насчет матриц?
+
+> **Обратная матрица** - это такая матрицы *А^-1*, которая при умножении на *А* дает единичную матрицу.
+
+Матрица обратима, если она квадратная и невырождена, то есть ее определитель не равен нулю.
+
+Свойства обратной матрицы:
+* ![Matrix inverse property](media/matrix_inverse_property_0.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_1.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_2.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_3.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_4.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_5.svg)
 
 ### <a name="matrix_practice"></a> Практика
 
