@@ -14,8 +14,10 @@
   + [Делители нуля](#matrix_multiplication_null)
   + [Матрица Грама](#matrix_gram)
   + [Обратные матрицы](#matrix_inverse)
+  + [Определитель матрицы](#matrix_determinant)
   + [Практика](#matrix_practice)
-  
++ [Линейная (не)зависимость](#linear_independence)
+
 ## <a name="vectors"></a> Векторы
 
 ### <a name="vectors_base"></a> Основные понятия
@@ -437,11 +439,38 @@ np.dot(matrix_b, matrix_a)
 
 Свойства обратной матрицы:
 * ![Matrix inverse property](media/matrix_inverse_property_0.svg)
-* ![Matrix inverse property](media/matrix_inverse_property_1.svg)
-* ![Matrix inverse property](media/matrix_inverse_property_2.svg)
-* ![Matrix inverse property](media/matrix_inverse_property_3.svg)
-* ![Matrix inverse property](media/matrix_inverse_property_4.svg)
-* ![Matrix inverse property](media/matrix_inverse_property_5.svg)
+* ![Matrix inverse property](media/matrix_inverse_property_1.svg) Где *det* - определитель
+* ![Matrix inverse property](media/matrix_inverse_property_2.svg) Для двух квадратных обратимых матриц
+* ![Matrix inverse property](media/matrix_inverse_property_3.svg) Где *T* - операция транспонирования
+* ![Matrix inverse property](media/matrix_inverse_property_4.svg) Для любого коэффициента *k != 0*
+* ![Matrix inverse property](media/matrix_inverse_property_5.svg) Где *Е* - единичная матрицы
+* Пусть необходимо решить систему уравнений *Ax = b*,
+  где *х* - искомый вектор, *b* - ненулевой вектор. 
+  Если *A^-1* существует, то *x = bA^-1*. 
+  В противном случае либо размерность пространства решений больше 0, либо их нет вовсе.
+
+### <a name="matrix_determinant"></a> Определитель матрицы
+
+> **Определитель матрицы** - это скалярная (числовая) характеристика квадратных матрицы,
+> которая является своего рода мерой вырожденности.
+
+Свойства определителя:
+* ![Matrix determinant property](media/matrix_determinant_property_0.svg)
+* ![Matrix determinant property](media/matrix_determinant_property_1.svg)
+* ![Matrix determinant property](media/matrix_determinant_property_2.svg)
+* ![Matrix determinant property](media/matrix_determinant_property_3.svg)
+* ![Matrix determinant property](media/matrix_determinant_property_4.svg)
+* Существует ненулевое решение уравнения *AX = 0* тогда и только тогда,
+  когда *det A = 0*. 
+  (Или же *det A* должен быть нетривиальным делителем нуля в случае, если *R* - не целостное кольцо)
+
+> **Вырожденная матрица** - это квадратная матрица, определитель которой равен нулю.
+
+**Если определитель матрицы *A* равен нулю, то:**
+* Матрица *A* вырождена.
+* У матрицы *A* не существует обратной.
+* Столбцы или строки матрицы *А* линейно зависимы.
 
 ### <a name="matrix_practice"></a> Практика
 
+## <a name="linear_independence"></a> Линейная (не)зависимость
